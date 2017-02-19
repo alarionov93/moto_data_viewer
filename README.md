@@ -9,3 +9,4 @@
     - add option `--new` if new measure_id needed (to divide this data from other, can be on the 2nd place)
     (adding this option tells the parser to create rows in db with next measure_id)
 4. Start app with `./start.sh`
+#### Don't forget about virtual env
