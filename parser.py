@@ -2,19 +2,21 @@ import models
 import sys
 
 DEFAULT_LOG_FILENAME = 'mdu.log'
+
 cursor = models.db.execute_sql('SELECT MAX(measure_id) FROM measures;')
 res = cursor.fetchone()
 print(res)
 new_measure_id = None
 if res[0] is not None:
     last_measure_id = int(res[0])
-    if len(sys.argv) > 1:
-        if sys.argv[1] == "--new":
+    if len(sys.argv) > 2:
+        if sys.argv[2] == "--new":
             new_measure_id = last_measure_id + 1
 else:
     last_measure_id = 0
-
-if len(sys.argv) > 2 and sys.argv[2] == "--force":
+# this argument is strongly needed, because of strange error on production:
+# when run ./start.sh parser.py is running, too.
+if len(sys.argv) > 1 and sys.argv[1] == "--force":
 
     try:
         with open(DEFAULT_LOG_FILENAME, "r") as f:
@@ -106,4 +108,5 @@ if len(sys.argv) > 2 and sys.argv[2] == "--force":
 
     except Exception as e:
         print(e)
-
+else:
+    print("Not run without `--force` option")
