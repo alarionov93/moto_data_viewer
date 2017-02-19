@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 export FLASK_APP=core_app.py
-flask run
+flask run --host=0.0.0.0 --port=5002
