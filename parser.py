@@ -1,9 +1,5 @@
-import datetime
-import json
 import models
 import sys
-
-# TODO: create flask app with database and load data into it
 
 DEFAULT_LOG_FILENAME = 'mdu.log'
 cursor = models.db.execute_sql('SELECT MAX(measure_id) FROM measures;')
@@ -106,105 +102,6 @@ try:
             else:
                 print("missing data!\n")
 
-
-    # with open('data/temp2.txt', "r") as f:
-    #     pure_temp_eng = f.read()
-    #     temp_eng_lst = []
-    #     splitted_temp_eng = pure_temp_eng.split('\n')
-    #     for d in splitted_temp_eng:
-    #         temp_eng_lst.append(float(d.split("=")[1].split(";")[0]))
-    #         # temp = models.TemperatureOut(value=float(d.split("=")[1].split(";")[0]))
-    #         # temp.save()
-    #     data_lst.append(temp_eng_lst)
-
-    # with open('data/pressure.txt', "r") as f:
-    #     import pdb
-    #     pure_pressure = f.read()
-    #     splitted_pressure = pure_pressure.split('\n')
-    #
-    # with open('data/voltage.txt', "r") as f:
-    #     pure_voltage = f.read()
-    #     splitted_voltage = pure_voltage.split('\n')
 except Exception as e:
     print(e)
-
-# for val_lst in data_lst:
-#     for d in val_lst:
-#         measure = models.Measures(temp_out=float(d.split("=")[1].split(";")[0]))
-#         measure.temp_eng = 0
-#         measure.voltage = 0
-#         measure.pressure = 0
-#
-#     measure.save()
-
-# for d in splitted_data:
-#     measure = models.Measures(float(d.split("=")[1].split(";")[0]))
-#     measure.save()
-
-# with open('data/temp1.json', "a") as f1:
-#     f1.write(json.dumps(data_lst))
-
-# with open('data/temp2.txt', "r") as f:
-#         import pdb
-#         pure_data = f.read()
-#         splitted_data = pure_data.split('\n')
-#         # print(splitted_data)
-#         data_lst = []
-#         for d in splitted_data:
-#             data_lst.append([
-#                 str(datetime.datetime.now()), float(d.split("=")[1].split(";")[0])
-#             ])
-#             # pdb.set_trace()
-#         print(data_lst)
-#
-# with open('data/temp2.json', "a") as f1:
-#     f1.write(json.dumps(data_lst))
-#
-# with open('data/pressure.txt', "r") as f:
-#         import pdb
-#         pure_data = f.read()
-#         splitted_data = pure_data.split('\n')
-#         # print(splitted_data)
-#         data_lst = []
-#         for d in splitted_data:
-#             data_lst.append([
-#                 str(datetime.datetime.now()), float(d.split("=")[1].split(";")[0])
-#             ])
-#             # pdb.set_trace()
-#         print(data_lst)
-#
-# with open('data/pressure.json', "a") as f1:
-#     f1.write(json.dumps(data_lst))
-#
-# with open('data/voltage.txt', "r") as f:
-#         import pdb
-#         pure_data = f.read()
-#         splitted_data = pure_data.split('\n')
-#         # print(splitted_data)
-#         data_lst = []
-#         for d in splitted_data:
-#             data_lst.append([
-#                 str(datetime.datetime.now()), float(d.split("=")[1].split(";")[0])
-#             ])
-#             # pdb.set_trace()
-#         print(data_lst)
-#
-# with open('data/voltage.json', "a") as f1:
-#     f1.write(json.dumps(data_lst))
-#
-# with open('data/gps_voltage.txt', "r") as f:
-#         import pdb
-#         pure_data = f.read()
-#         splitted_data = pure_data.split('\n')
-#         # print(splitted_data)
-#         data_lst = []
-#         for d in splitted_data:
-#             data_lst.append([
-#                 str(datetime.datetime.now()), float(d.split("=")[1].split(";")[0])
-#             ])
-#             # pdb.set_trace()
-#         print(data_lst)
-#
-# with open('data/gps_voltage.json', "a") as f1:
-#     f1.write(json.dumps(data_lst))
 

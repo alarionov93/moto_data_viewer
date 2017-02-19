@@ -10,15 +10,6 @@ class BaseModel(Model):
     class Meta:
         database = db
 
-def get_measure_id(table):
-    # TODO: think how divide measurements !!
-    if not table:
-        return ProgrammingError('Not found data source for getting last measure id')
-    cursor = db.execute_sql('SELECT MAX(measure_id) FROM %;' % table)
-    res = cursor.fetchone()
-    m_id = int(res)
-    return m_id
-
 class TemperatureOut(BaseModel):
 
     created_at = DateTimeField(default=datetime.datetime.now)
@@ -39,25 +30,6 @@ class TemperatureOut(BaseModel):
             self.value
         ]
 
-
-# class TemperatureEng(BaseModel):
-#     created_at = DateTimeField(default=datetime.datetime.now)
-#     comment = CharField(unique=False, null=True, default='')
-#     value = FloatField(unique=False, null=False, default=0.0)
-#
-#     def to_json(self):
-#         return {
-#             'id': self.id,
-#             'measure_id': self.measure_id,
-#             'created_at': self.created_at,
-#             'value': self.value
-#         }
-#
-#     def to_list(self):
-#         return [
-#             self.created_at,
-#             self.value
-#         ]
 
 class Measures(BaseModel):
     temp_out = FloatField(unique=False, null=False, default=0.0)

@@ -14,14 +14,4 @@ models.db.connect()
 print("Try to create table Measures...")
 models.db.create_table(models.Measures)
 
-# try:
-#     print("Try to remove table EventGroup...")
-#     models.db.drop_table(models.EventGroup)
-# except Exception as e:
-#     print(e)
-# finally:
-#     print("Try to create table EventGroup...")
-#     models.db.create_table(models.EventGroup)
-
-
 models.db.close()
