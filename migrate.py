@@ -8,8 +8,8 @@ models.db.connect()
 # except:
 #     print("Table Temperature does not exists!")
 # finally:
-print("Try to create table Temperature...")
-models.db.create_table(models.TemperatureOut)
+# print("Try to create table Temperature...")
+# models.db.create_table(models.TemperatureOut)
 
 print("Try to create table Measures...")
 models.db.create_table(models.Measures)
