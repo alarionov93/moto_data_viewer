@@ -9,6 +9,8 @@ parser = argparse.ArgumentParser(description='Options for log parser')
 parser.add_argument('--force', action='store_true', help='Not running without this option (because of auto run with start.sh)')#, required=True)
 parser.add_argument('--new', action='store_true', help='Create new measure id')
 parser.add_argument('--update', action='store_true', help='Update data (truncate log file to store only new values into db)')
+parser.add_argument('--host', action='store_true', help='Host (temporary)')
+parser.add_argument('--port', action='store_true', help='Port (temporary)')
 args = parser.parse_args()
 
 # get values of args here
