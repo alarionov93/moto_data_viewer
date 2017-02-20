@@ -10,7 +10,6 @@
     - add option `--new` if new measure_id needed to divide this new data from other
     	(this option tells the parser to create rows in db with last_measure_id + 1)
     - `--truncate` option tells the parser to truncate log file to store only new values from it into db and exit script
-    	(not implemented yet)
     ## Important: only one of options (`--new` and `--truncate`) could be passed !!!
 4. Start app with `./start.sh`
 #### Don't forget about virtual env
