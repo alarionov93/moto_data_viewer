@@ -5,8 +5,11 @@
 2. If no db exists, run `python migrate.py`
 3. Put data into db with `python parser.py`
     - view the log file name in parser.py
-    - `--force` option should be on 1st place (!)
-    - add option `--new` if new measure_id needed (to divide this data from other, can be on the 2nd place)
-    (adding this option tells the parser to create rows in db with next measure_id)
+    - `--force` option is required
+    	(because of ./start.sh script invokes parser.py by inexplicable reason)
+    - add option `--new` if new measure_id needed to divide this new data from other
+    	(this option tells the parser to create rows in db with last_measure_id + 1)
+    - `--update` option tells the parser to truncate log file to store only new values from it into db
+    	(not implemented yet)
 4. Start app with `./start.sh`
 #### Don't forget about virtual env

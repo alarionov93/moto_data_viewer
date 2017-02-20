@@ -25,7 +25,7 @@ function drawTrackerChgChart() {
     var data = google.visualization.arrayToDataTable(jsonTrackerData);
 
     // Set chart options
-    var options = {'title':'Tracker Chg Info',
+    var options = {'title':'Tracker Charge Info',
                    'width':1000,
                    'height':400};
 

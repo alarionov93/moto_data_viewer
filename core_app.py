@@ -28,7 +28,7 @@ def get_gps_chg_info(m_id):
         raise AttributeError("Measure id is None")
     data = models.Measures.select().where(models.Measures.measure_id == int(m_id)).order_by(models.Measures.created_at)
     data_lst = []
-    data_lst.append(['Id', 'Charging Percent', 'Charging Status'])
+    data_lst.append(['Id', 'Charging Status', 'Charging Percent'])
     for d in data:
         data_lst.append(d.tracker_chg_info_to_list())
     return jsonify(data_lst)
