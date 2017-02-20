@@ -11,6 +11,9 @@ parser.add_argument('--new', action='store_true', help='Create new measure id')
 parser.add_argument('--update', action='store_true', help='Update data (truncate log file to store only new values into db)')
 parser.add_argument('--host', action='store', help='Host (temporary)')
 parser.add_argument('--port', action='store', help='Port (temporary)')
+parser.add_argument('run', action='store', help='Run (temporary)')
+# TODO: host, port and run arguments appears by unknown reason from invokation od start.sh. 
+# ArgumentParser shows an error if these arguments are not added to it. That's why they are here.
 args = parser.parse_args()
 
 # get values of args here
