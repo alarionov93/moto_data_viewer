@@ -41,11 +41,24 @@ $(document).ready(function () {
   });
 
   var jsonData;
-  function getData() {
-
+  function getData(update) {
+      var url;
+      // TODO: decide how to define if it is a NEW measure !!
+      // Decided ! Reset checkbox !!!
+      var isNewMeasure = 0; // 0 - is default
+      if ($("#is_new_measure_check").is(':checked')) {
+        isNewMeasure = 1;
+      } else {
+        isNewMeasure = 0;
+      }
+      if (update) {
+        url = '/update_measures/' + $("select#measure").val() + '/' + isNewMeasure;
+      } else {
+        url = '/get_measures/' + $("select#measure").val();
+      }
       $.ajax({
         method: 'GET',
-        url: '/get_measures/' + $("select#measure").val(),
+        url: url,
         dataType: 'json',
         contentType:"application/json",
         success: function(resp) {
@@ -54,6 +67,9 @@ $(document).ready(function () {
           google.charts.load('current', {'packages':['corechart']});
           // Set a callback to run when the Google Visualization API is loaded.
           google.charts.setOnLoadCallback(drawChart);
+          // reset checkbox here, because new measure ID needed only one time for updating measures, not every!!
+          $("#is_new_measure_check").attr('checked', false);
+          // $("#is_new_measure_check").prop('checked', false);
         }
       });
   }
@@ -79,4 +95,8 @@ $(document).ready(function () {
     var chart = new google.visualization.LineChart(document.getElementById('main_chart_div'));
     chart.draw(data, options);
   }
+  var t = setInterval(function() {
+    console.log("Updating graphs...");
+    getData(true);
+  }, 5000);
 });

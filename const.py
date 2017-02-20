@@ -1,0 +1,2 @@
+
+DEFAULT_LOG_FILENAME = 'mdu.log'
