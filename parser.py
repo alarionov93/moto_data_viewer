@@ -6,7 +6,7 @@ DEFAULT_LOG_FILENAME = 'mdu.log'
 
 parser = argparse.ArgumentParser(description='Options for log parser')
 
-parser.add_argument('--force', action='store_true', help='Not running without this option (because of auto run with start.sh)', required=True)
+parser.add_argument('--force', action='store_true', help='Not running without this option (because of auto run with start.sh)')#, required=True)
 parser.add_argument('--new', action='store_true', help='Create new measure id')
 parser.add_argument('--update', action='store_true', help='Update data (truncate log file to store only new values into db)')
 args = parser.parse_args()
