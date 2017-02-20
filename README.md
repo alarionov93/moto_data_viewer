@@ -3,7 +3,7 @@
 ## From 1st step - if there is new measures / else go to step 4
 1. `cd Work/Electronics/dataViewer` and get `mdu.log` file
 2. If no db exists, run `python migrate.py`
-3. Put data into db with `python parser.py`
+3. Put data into db with `python parser.py run [other args]`
     - view the log file name in parser.py
     - `--force` option is required
     	(because of ./start.sh script invokes parser.py by inexplicable reason)
