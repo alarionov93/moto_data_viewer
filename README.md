@@ -3,6 +3,8 @@
 ## From 1st step - if there is new measures / else go to step 4
 1. `cd Work/Electronics/dataViewer` and get `mdu.log` file
 2. If no db exists, run `python migrate.py`
+    Alternatively the SQL statement `INSERT INTO measures (measure_id,temp_out,temp_eng,pressure,voltage,fuel,gps_charge_stat,gps_charge_val,created_at) VALUES (1,10,10,10,10,10,0,10, NOW());`
+    could be used after creating db.
 3. Put data into db with `python parser.py run [other args]`
     - view the log file name in parser.py
     - `--force` option is required

@@ -42,7 +42,7 @@ def get_measures(m_id):
         measures = models.Measures.select().where(models.Measures.measure_id == int(m_id)).order_by(models.Measures.id)
 
     measures_lst = []
-    measures_lst.append(['Id', 'Temperature Outside', 'Engine Temperature', 'Pressure', 'Voltage'])
+    measures_lst.append(['Id', 'Temperature Outside', 'Engine Temperature', 'Pressure', 'Voltage', 'Fuel level'])
     for m in measures:
         measures_lst.append(m.to_list())
     # lp = LogParser()
@@ -58,7 +58,7 @@ def update_measures(m_id, is_new_measure=False):
         measures = models.Measures.select().where(models.Measures.measure_id == int(m_id)).order_by(models.Measures.id)
 
     measures_lst = []
-    measures_lst.append(['Id', 'Temperature Outside', 'Engine Temperature', 'Pressure', 'Voltage'])
+    measures_lst.append(['Id', 'Temperature Outside', 'Engine Temperature', 'Pressure', 'Voltage', 'Fuel level'])
     for m in measures:
         measures_lst.append(m.to_list())
     # TODO: update data in db here with LogParser()

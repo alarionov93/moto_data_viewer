@@ -36,6 +36,7 @@ class Measures(BaseModel):
     temp_eng = FloatField(unique=False, null=False, default=0.0)
     pressure = FloatField(unique=False, null=False, default=0.0)
     voltage = FloatField(unique=False, null=False, default=0.0)
+    fuel = IntegerField(unique=False, null=False, default=0)
     gps_charge_stat = IntegerField(unique=False, null=True, default=0)
     gps_charge_val = IntegerField(unique=False, null=True, default=0)
     created_at = DateTimeField(default=datetime.datetime.now)
@@ -53,5 +54,6 @@ class Measures(BaseModel):
             self.temp_out,
             self.temp_eng,
             self.pressure,
-            self.voltage
+            self.voltage,
+            self.fuel
         ]

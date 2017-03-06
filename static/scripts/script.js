@@ -98,5 +98,5 @@ $(document).ready(function () {
   var t = setInterval(function() {
     console.log("Updating graphs...");
     getData(true);
-  }, 5000);
+  }, 12000);
 });
