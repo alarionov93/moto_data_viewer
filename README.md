@@ -15,3 +15,5 @@
     ## Important: only one of options (`--new` and `--truncate`) could be passed !!!
 4. Start app with `./start.sh`
 #### Don't forget about virtual env
+
+To initiate getting data from BT execute `cat /dev/tty.HC-05-DevB >> ~/Work/Electronics/dataViewer/mdu.log`
