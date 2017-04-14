@@ -4,7 +4,7 @@ import models
 
 class LogParser(object):
     """docstring for LogParser
-       Parser for log files for MDU (try to use it not only in yhis project)
+       Parser for log files for MDU (try to use it not only in this project)
     """
     def __init__(self, log_file_name=const.DEFAULT_LOG_FILENAME):
         super(LogParser, self).__init__()
@@ -18,7 +18,7 @@ class LogParser(object):
         if res[0] is not None:
             print('Current measure id: %s' % res[0])
             last_measure_id = int(res[0])
-            if new_measure == True:
+            if new_measure:
                 new_measure_id = last_measure_id + 1
         else:
             last_measure_id = 0

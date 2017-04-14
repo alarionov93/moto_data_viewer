@@ -61,7 +61,6 @@ def update_measures(m_id, is_new_measure=False):
     measures_lst.append(['Id', 'Temperature Outside', 'Engine Temperature', 'Pressure', 'Voltage', 'Fuel level'])
     for m in measures:
         measures_lst.append(m.to_list())
-    # TODO: update data in db here with LogParser()
     lp = LogParser()
     if int(is_new_measure) == 1:
         lp.parse(truncate_log=True, new_measure=True)
