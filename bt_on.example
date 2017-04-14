@@ -1,0 +1,4 @@
+#sudo hciconfig hci0 up
+
+#then bluetoothctl: agent on, default-agent, scan on, pair XX:XX:..., 
+
