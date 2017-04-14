@@ -1,4 +1,5 @@
 #sudo hciconfig hci0 up
 
 #then bluetoothctl: agent on, default-agent, scan on, pair XX:XX:..., 
+# or sudo rfcomm bind 0 7C:D1:C3:87:3D:ED, then get data from it, then sudo rfcomm release 0 
 
